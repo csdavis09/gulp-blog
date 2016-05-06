@@ -2,7 +2,9 @@ var gulp     = require('gulp');
 var nunjucksRender = require('gulp-nunjucks-render');
 var markdown = require('gulp-markdown');
 var htmlmin  = require('gulp-htmlmin');
+var sass     = require('gulp-sass');
 var sequence  = require('gulp-sequence');
+var concat  = require('gulp-concat');
 var del      = require('del');
 var bSync    = require('browser-sync');
 var reload    = bSync.reload;
@@ -19,6 +21,15 @@ gulp.task("blog", function() {
 gulp.task('pages', function() {
   return gulp.src("src/pages/**/*.html")
              .pipe(nunjucksRender({ path: ['src/templates']}))
+             .pipe(htmlmin({collapseWhitespace: true}))
+             .pipe(gulp.dest('dist'))
+             .pipe(reload({stream: true}));
+});
+
+gulp.task('sass', function()  {
+  return gulp.src("src/css/**/*.scss")
+             .pipe(sass({outputStyle: 'compact'}).on('error', sass.logError))
+             .pipe(concat('css/all.min.css', {newLine: ''}))
              .pipe(gulp.dest('dist'))
              .pipe(reload({stream: true}));
 });
@@ -31,4 +42,4 @@ gulp.task("sync", function() {
   return bSync({server: {baseDir: 'dist'}});
 });
 
-gulp.task("default", sequence('clean', 'blog','pages', 'sync') );
+gulp.task("default", sequence('clean', 'sass', 'blog', 'pages', 'sync') );
