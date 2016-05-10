@@ -8,6 +8,7 @@ var markdown = require('gulp-markdown');
 var frontMatter = require('gulp-front-matter');
 var htmlmin  = require('gulp-htmlmin');
 var sass     = require('gulp-sass');
+var imagemin     = require('gulp-imagemin');
 var sequence  = require('gulp-sequence');
 var concat  = require('gulp-concat');
 var data  = require('gulp-data');
@@ -62,6 +63,8 @@ gulp.task('sass', function()  {
 
 gulp.task("images", function() {
   return gulp.src("src/img/**/*")
+             .pipe(gulp.dest("dist/img"))
+             .pipe(imagemin())
              .pipe(gulp.dest("dist/img"));
 });
 
