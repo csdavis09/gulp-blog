@@ -1,5 +1,5 @@
 ---
-title: First post
+title: Second post
 author: Candra
 ---
 
