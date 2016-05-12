@@ -1,6 +1,7 @@
 ---
 title: Second post
 author: Candra
+permalink: /blog/second-post.html
 ---
 
 Adipisicing maiores ex id at pariatur sequi. Pariatur numquam aut esse neque molestiae quas? Ullam quae quo commodi voluptas inventore sint iusto corrupti? Sunt quis ab commodi nemo error id.
