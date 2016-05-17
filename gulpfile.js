@@ -13,6 +13,7 @@
   var sass     = require('gulp-sass');
   var imagemin     = require('gulp-imagemin');
   var sequence  = require('gulp-sequence');
+  var ghPages  = require('gulp-gh-pages');
   var watch  = require('gulp-watch');
   var concat  = require('gulp-concat');
   var data  = require('gulp-data');
@@ -78,6 +79,11 @@ console.log(file.page.permalink);
 	      .pipe(gulp.dest("dist/js"));
   });
 
+  gulp.task('deploy', function() {
+    return gulp.src('src/js/**/*')
+               .pipe(ghPages());                 
+ });               
+  
   gulp.task('watch', function(cb) {
     gulp.watch('src/js/**/*.js', ['js']);
     gulp.watch('src/css/**/*.scss', ['sass']);
