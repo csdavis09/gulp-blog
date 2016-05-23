@@ -1,16 +1,21 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      {% for post in site.posts %}
-      <div class="article-brief">
-        <h2><a href="{{ post.permalink }}">{{ post.title}}</a></h2>
-        <div class="author">{{ post.author }}</div>
-        {{ post.content }}
-      </div>
-      {% endfor %}
-    </div>
+
+
+<div class="row">
+  <div class="col-md-12" id="cover">
+    &nbsp;
   </div>
 </div>
+
+<h3>My recent posts</h3>
+{% for post in site.posts %}
+  <article>
+    <a href="{{ post.permalink }}">{{ post.title }}</a>
+    <div class="meta">{{ post.author }}</div>
+    {{ post.summary | safe }}
+
+    <p><a href="{{ post.permalink }}">READ MORE</a></p>
+  </article>
+{% endfor %}
 {% endblock %}
