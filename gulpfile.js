@@ -33,7 +33,7 @@
       site.posts = posts;
       cb();
     });
-  }
+  };
 
   gulp.task("blog", function() {
     return gulp.src("src/posts/**/*.md")

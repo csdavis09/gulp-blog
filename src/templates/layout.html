@@ -5,41 +5,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"/>
     <link rel="stylesheet" href="css/all.min.css"/>
   </head>
 
   <body>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3 col-lg-2" id="leftCol">
-	  <ul class="nav nav-stacked" id="sidebar">
-            {% block menu %}
-            <li class="active"><a href="/">HOME</a></li>
-            <li><a href="/about.html">ABOUT</a></li>
-            <li><a href="/projects.html">PROJECTS</a></li>
-            <li><a href="/contactMe.html">CONTACT ME</a></li>
-            <li><a href="/blog.html">BLOG</a></li>
-            {% endblock %}
-          </ul>
-        </div>
-    
-        <div class="col-sm-9 col-lg-10">
-          <div class="row">
-            <div class="col-md-12">
-              <h1>She can code it.</h1>
-              {% block content %}{% endblock %}
-            </div>
-          </div>
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">      
+          {% block menu %}
+          <li class="active"><a href="/">HOME</a></li>
+          <li><a href="/about.html">ABOUT</a></li>
+          <li><a href="/projects.html">PROJECTS</a></li>
+          <li><a href="/contactMe.html">CONTACT ME</a></li>
+          <li><a href="/newsletter.html">NEWSLETTER</a></li>
+          {% endblock %}
+        </nav>
+      </div>
+    </div>
+    <div class="container">
+      <div>
+        <div class="jumbotron" id="main-header">
+          <h1>She can code it.</h1>
+          <p>Empowering Women in Tech</p>
+          <p><a class="btn btn-primary btn-lg" href="#" role="button">Join Me!</a></p>
         </div>
       </div>
-    
-      <footer>
-        <ul class="list list-inline text-center">
-          <li><img src="/img/LinkedIn.png" alt="linkdin"></li> 
-          <li><img src="/img/Twitter.png" alt="twitter"></li>
-          <li><img src="/img/Instagram.png" alt="instagram"></li>
-        </ul>
+
+      <div class="row">
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>About Me</h4>
+            <p>I'm a mom. I'm learning web development. I believe in the power of women
+            creating a diversified tech field.I'm chronicaling the 
+            challenges and joys of learning to code and the transition
+            from homemaker to development diva. Join me
+            on this adventure.</p>
+          </div>
+          <div class="sidebar-module">
+            <h4>Archives</h4>  
+            <ol class="list-unstyled">
+              <li><a href="#"src="#.md">May 2016</a></li>
+              <li><a href="#"src="#.md">June 2016</a></li>
+              <li><a href="#"src="#.md">July 2016</a></li>
+            </ol>
+          </div>
+          <div class="sidebar-module">
+            <h4>You Can Find Me Elsewhere</h4>
+            <ul>
+              <li><a href="https://github.com/csdavis09">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/candrasdavis">LinkdIn</a></li>
+              <li><a href="https://twitter.com/csdavis2009">Twitter</a></li>
+            </ul>
+          </div>
+        </div>
+        <div style="border: 2px dotted red;" class="col-sm-8 blog-main">
+          {% block content %}{% endblock %}
+          <!--<div class="blog-post">
+            <h2 class="blog-post-title">Title Here</h2>   
+            <p class="blog-post-meta">May 2016 by <a href="#">Twitter Handle</a></p>
+            <nav>
+            <ul class="pager">
+            <li><a href="#">Previous</a></li>
+            <li><a href="#">Next</a></li>
+            </ul>
+            </nav>
+            </div>  --> 
+        </div>
+      </div>
+      <footer class="blog-footer">
+        <div class="container">
+          <ul class="list list-inline text-center">
+            <li><img src="/img/LinkedIn.png" alt="linkdin"></li> 
+            <li><img src="/img/Twitter.png" alt="twitter"></li>
+            <li><img src="/img/Instagram.png" alt="instagram"></li>
+          </ul>
+        </div>
       </footer>
     </div>
 

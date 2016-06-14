@@ -1,5 +1,10 @@
-.affix-top,.affix{
+.affix-top,
+.affix {
   position: static;
+}
+
+nav.blog-nav {
+  display:block;
 }
 
 @media (min-width: 979px) {
@@ -14,6 +19,38 @@
     top:70px;
     width:228px;
   }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+@media (min-width: 680px) {
+}
+
+.jumbotron {
+  background-size: cover;
+  position: relative;
+  background: center center, url('/img/laptop-purse.jpg'); 
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.navbar-brand {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+.footer li {
+  display: inline-block;
+  margin: 0px;
+  padding: 20px 20px;
+  width: 100%;
+  border: #F9A25A 3px 0 0 0;
+  text-align: center;
 }
 
 #sidebar li.active {
