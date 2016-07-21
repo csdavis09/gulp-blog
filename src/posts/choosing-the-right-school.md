@@ -1,6 +1,6 @@
 ---
 title: Choosing the Right School
-author: Candra
+publishedOn: 2016/05/20
 permalink: /blog/choosing-the-right-school.html
 ---
 

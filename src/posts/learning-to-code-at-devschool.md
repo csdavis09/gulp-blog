@@ -1,6 +1,6 @@
 ---
 title: Learning to code at Devschool
-author: Candra
+publishedOn: 2016/05/16
 permalink: /blog/learning-to-code-at-devschool.html
 ---
 
@@ -14,4 +14,3 @@ Like many others, I didn't go out searching for a career in web development, I s
 
 So, for any of you out there looking to learn how to code, I hope you can use my journey as a resource to decide whether or not web development is right for you.  Tune in, as next week I talk about how it felt starting out.
 
-**Bold text**

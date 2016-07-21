@@ -5,7 +5,7 @@
 {% for post in site.posts %}
   <article>
     <a href="{{ post.permalink }}">{{ post.title }}</a>
-    <div class="meta">{{ post.author }}</div>
+    <div class="meta">{{ post.formattedDate }}</div>
     {{ post.summary | safe }}
 
     <p><a href="{{ post.permalink }}">READ MORE</a></p>

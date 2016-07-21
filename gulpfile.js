@@ -9,6 +9,7 @@
   var plugins  = require('gulp-load-plugins')();
   var del      = require('del');
   var fs      = require('fs');
+  var dateformat   = require('dateformat');
   var through2 = require('through2');
   var bSync    = require('browser-sync');
   var reload   = bSync.reload;
@@ -26,10 +27,15 @@
       post.body = file.contents.toString();
       post.summary = summarize(file.contents.toString(), '<!--more-->');
       post.content = file.contents;
+      post.publishedOn = file.page.publishedOn;
+      post.formattedDate = dateformat(Date.parse(post.publishedOn), "mmmm d, yyyy ");
       posts.push(post);
       this.push(file);
       cb();
     }, function(cb) {
+      posts.sort(function(a, b) {
+        return Date.parse(b.publishedOn) - Date.parse(a.publishedOn);
+      });
       site.posts = posts;
       cb();
     });

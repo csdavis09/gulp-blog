@@ -10,29 +10,38 @@
   </head>
 
   <body>
-    <div class="blog-masthead">
+    <div class="jumbotron-main">
       <div class="container">
-        <nav class="blog-nav">      
-          {% block menu %}
-          <li class="active"><a href="/">HOME</a></li>
-          <li><a href="/about.html">ABOUT</a></li>
-          <li><a href="/projects.html">PROJECTS</a></li>
-          <li><a href="/contactMe.html">CONTACT ME</a></li>
-          <li><a href="/newsletter.html">NEWSLETTER</a></li>
-          {% endblock %}
+        {% block menu %}
+        <nav class="navbar navbar-fixed-top">
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav pull-right">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
         </nav>
+        {% endblock %}
+        <h1>She can code it.</h1>
+        <p>Empowering Women in Tech</p>
+        <p><a class="btn btn-primary btn-lg" href="/signUp.html" role="button">Join Me!</a></p>
       </div>
     </div>
     <div class="container">
-      <div>
-        <div class="jumbotron" id="main-header">
-          <h1>She can code it.</h1>
-          <p>Empowering Women in Tech</p>
-          <p><a class="btn btn-primary btn-lg" href="#" role="button">Join Me!</a></p>
-        </div>
-      </div>
-
-      <div class="row">
+      <div class="row top-margin">
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
             <h4>About Me</h4>
@@ -56,10 +65,11 @@
               <li><a href="https://github.com/csdavis09">GitHub</a></li>
               <li><a href="https://www.linkedin.com/in/candrasdavis">LinkdIn</a></li>
               <li><a href="https://twitter.com/csdavis2009">Twitter</a></li>
+              <li><a href="#">Instagram</a></li>
             </ul>
           </div>
         </div>
-        <div style="border: 2px dotted red;" class="col-sm-8 blog-main">
+        <div class="col-sm-8 blog-main">
           {% block content %}{% endblock %}
           <!--<div class="blog-post">
             <h2 class="blog-post-title">Title Here</h2>   
@@ -79,11 +89,11 @@
             <li><img src="/img/LinkedIn.png" alt="linkdin"></li> 
             <li><img src="/img/Twitter.png" alt="twitter"></li>
             <li><img src="/img/Instagram.png" alt="instagram"></li>
+            <li><img src="/img/GitHub.png" alt="github"></li>
           </ul>
         </div>
       </footer>
-    </div>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   </body>
 </html>
