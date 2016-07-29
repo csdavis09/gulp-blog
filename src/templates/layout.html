@@ -10,10 +10,8 @@
   </head>
 
   <body>
-    <div class="jumbotron-main">
-      <div class="container">
         {% block menu %}
-        <nav class="navbar navbar-fixed-top">
+        <nav class="navbar navbar">
           <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -23,73 +21,48 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
+              <a class="navbar-brand" href="/"><strong>Candra S. Davis</strong></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav pull-right">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
+                <li><a href="/"><strong>Home</strong></a></li>
+                <li><a href="/about"><strong>About</strong></a></li>
+                <li><a href="/contactMe"><strong>Contact Me</strong></a></li>
+                <li><a href="/projects"><strong>Projects</strong></a></li>
+                <li><a href="/blog"><strong>Blog</strong></a></li>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>
         {% endblock %}
-        <h1>She can code it.</h1>
-        <p>Empowering Women in Tech</p>
-        <p><a class="btn btn-primary btn-lg" href="/signUp.html" role="button">Join Me!</a></p>
+    <div class="jumbotron-main">
+      <div class="container">
+        <h1 class="hero-header">She can code it.</h1>
+        <p class="hero-msg">Empowering Women in Tech</p>
+        <p><a class="btn btn-warning btn-md" href="/newsletter.html" role="button">Join Me!</a></p>
       </div>
     </div>
-    <div class="container">
-      <div class="row top-margin">
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-          <div class="sidebar-module sidebar-module-inset">
-            <h4>About Me</h4>
-            <p>I'm a mom. I'm learning web development. I believe in the power of women
-            creating a diversified tech field.I'm chronicaling the 
-            challenges and joys of learning to code and the transition
-            from homemaker to development diva. Join me
-            on this adventure.</p>
+
+          {% block content %}
+          <h2>About Me</h2>
+            <img src="img/thumbnail.jpg" alt="thumbnail">
+            <p>Hi. My name is Candra Davis. I am a full-stack webdeveloper working, and living near Chicagoland.  I like writing clean, elegant code.  </p>
           </div>
-          <div class="sidebar-module">
-            <h4>Archives</h4>  
-            <ol class="list-unstyled">
-              <li><a href="#"src="#.md">May 2016</a></li>
-              <li><a href="#"src="#.md">June 2016</a></li>
-              <li><a href="#"src="#.md">July 2016</a></li>
-            </ol>
-          </div>
-          <div class="sidebar-module">
-            <h4>You Can Find Me Elsewhere</h4>
-            <ul>
-              <li><a href="https://github.com/csdavis09">GitHub</a></li>
-              <li><a href="https://www.linkedin.com/in/candrasdavis">LinkdIn</a></li>
-              <li><a href="https://twitter.com/csdavis2009">Twitter</a></li>
-              <li><a href="#">Instagram</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-sm-8 blog-main">
-          {% block content %}{% endblock %}
-          <!--<div class="blog-post">
-            <h2 class="blog-post-title">Title Here</h2>   
-            <p class="blog-post-meta">May 2016 by <a href="#">Twitter Handle</a></p>
-            <nav>
-            <ul class="pager">
-            <li><a href="#">Previous</a></li>
-            <li><a href="#">Next</a></li>
-            </ul>
-            </nav>
-            </div>  --> 
-        </div>
-      </div>
+          {% endblock %}
+
+{% block blog %}{% endblock %}
+
       <footer class="blog-footer">
         <div class="container">
+            <p class="blog-post-meta">Posted by: <a href="#">@csdavis09</a></p>
+            <p>Contact Information: <a href="mailto:shecancodeit@gmail.com">shecancodeit@gmail.com</a></p>
           <ul class="list list-inline text-center">
-            <li><img src="/img/LinkedIn.png" alt="linkdin"></li> 
-            <li><img src="/img/Twitter.png" alt="twitter"></li>
-            <li><img src="/img/Instagram.png" alt="instagram"></li>
-            <li><img src="/img/GitHub.png" alt="github"></li>
+            <li><a href="https://www.linkedin.com/in/candrasdavis" target="_blank"><img src="/img/LinkedIn.png" alt="linkdin"></a></li> 
+            <li><a href="https://mobile.twitter.com/csdavis2009" target="_blank"><img src="/img/Twitter.png" alt="twitter"></a></li>
+            <li><a href="#"><img src="/img/Instagram.png" alt="instagram"></a></li>
+            <li><a href="https://github.com/csdavis09" target="_blank"><img src="/img/GitHub.png" alt="github"></a></li>
           </ul>
         </div>
       </footer>

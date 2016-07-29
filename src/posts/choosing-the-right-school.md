@@ -8,6 +8,8 @@ When looking to find the right school, it's important to consider
 several different factors.  What is important to you?  What are your learning styles?
 How will you best balance school with home?
 
+<!--more-->
+
 There are a plethora of online and in-person bootcamp options. 
 However, choosing the right school can be daunting.  One of the things
 that was most frustrating for me was finding accurate representations

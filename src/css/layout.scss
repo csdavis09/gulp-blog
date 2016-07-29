@@ -34,11 +34,13 @@ body {
 
 @media (min-width: 680px) {
   .jumbotron-main {
-    background-image: url(/img/chicago-morning.jpg);
-    background-position: 50% 100%;
+    padding-top: 10px;
+    background-image: url(/img/coffee-apple-iphone-laptop.jpg);
+    background-position: 100% 100%;
     background-size: cover;
+    background-repeat: no-repeat;
     width: 100%;
-    height: 500px;
+    height: 100vh;
   }
 }
 
@@ -46,20 +48,33 @@ body {
   margin-top: 2em;
 }
 
-.navbar-brand {
-  padding: 0px;
-  margin: 0px;
-  border: 0px;
-}
-
-.nav>li>a, .nav>li>a {
-  color: #fff;
-}
-
-.nav>li>a:focus, .nav>li>a:hover {
-  color: #fff;
+a.navbar-brand {
+  padding-bottom: 5px;
+  color: #007a7a;
   background: transparent;
 }
+
+
+.nav>li>a, .nav>li>a, a.navbar-brand {
+  color: #007a7a;
+  padding-bottom: 5px;
+  text-decoration: underline;
+}
+
+.nav>li>a:focus, .nav>li>a:hover,
+a.navbar-brand:focus, a.navbar-brand:hover {
+  color: #9ca8b8;
+  background: transparent;
+}
+.hero-header,
+.hero-msg {
+  color: #fff;
+}
+.sidebar-module {
+  text-align: center;
+  border: 2px solid blue;
+}
+
 
 .footer li {
   display: inline-block;
@@ -73,6 +88,10 @@ body {
 #sidebar li.active {
   border:0 #eee solid;
   border-right-width:4px;
+}
+
+#mainCol {
+  float: right;
 }
 
 #mainCol h2 {
