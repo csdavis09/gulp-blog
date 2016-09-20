@@ -2,6 +2,16 @@
 .affix {
   position: static;
 }
+html, body {
+  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
+  font-smooth: always;
+  font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -12,9 +22,22 @@ nav.home-nav {
   list-style: none;
 }
 
+.navbar {
+  border-radius: 0;
+  position: absolute;
+  min-height: 20px;
+  width: 100%;
+  margin-bottom: 0px;
+  /* border: 1px solid transparent; */
+  background: rgba(0,0,0,0.3);
+}
 nav.home-nav li {
   display: inline-block;
   margin-left: 30px;
+}
+nav.navbar li a {
+  color: rgba(255,255,255, 0.9);
+  text-decoration: none;
 }
 
 @media (min-width: 979px) {
@@ -54,15 +77,18 @@ body {
 
 a.navbar-brand {
   padding-bottom: 5px;
-  color: #007a7a;
   background: transparent;
+  color: rgba(255,255,255,0.8);
+}
+
+a.navbar-brand:hover {
+  color: black;
 }
 
 
 .nav>li>a, .nav>li>a, a.navbar-brand {
-  color: #007a7a;
   padding-bottom: 5px;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .nav>li>a:focus, .nav>li>a:hover,
@@ -73,6 +99,7 @@ a.navbar-brand:focus, a.navbar-brand:hover {
 .hero-header,
 .hero-msg {
   color: #fff;
+  margin-top: 2em;
 }
 .sidebar-module {
   text-align: center;
