@@ -1,8 +1,8 @@
 
-"use strict"
+'use strict'
 
 const site = {
-  title: "She can code-it"
+  title: 'She can code it'
 }
 
 import gulp     from 'gulp'
@@ -30,7 +30,7 @@ var collectPosts = function() {
     post.summary = summarize(file.contents.toString(), '<!--more-->')
     post.content = file.contents
     post.publishedOn = file.page.publishedOn
-    post.formattedDate = df(Date.parse(post.publishedOn), "mmmm d, yyyy ")
+    post.formattedDate = df(Date.parse(post.publishedOn), 'mmmm d, yyyy ')
     posts.push(post)
     this.push(file)
     cb()
@@ -43,9 +43,9 @@ var collectPosts = function() {
   })
 }
 
-gulp.task("blog", function() {
-  return gulp.src("src/posts/**/*.md")
-            .pipe(plugins.frontMatter({property: "page", remove: true}))
+gulp.task('blog', function() {
+  return gulp.src('src/posts/**/*.md')
+            .pipe(plugins.frontMatter({property: 'page', remove: true}))
             .pipe(plugins.data({site: site}))
             .pipe(plugins.markdown())
             .pipe(collectPosts())
@@ -53,12 +53,17 @@ gulp.task("blog", function() {
               return fs.readFileSync('src/templates/post.html').toString()
             }, null, {engine: 'nunjucks'}))
             .pipe(plugins.htmlmin({collapseWhitespace: true}))
-            .pipe(gulp.dest("dist/blog"))
+            .pipe(gulp.dest('dist/blog'))
             .pipe(reload({stream: true}))
 })
 
+gulp.task('deploy',['default'], function() {
+  return gulp.src('./dist/**/*')
+             .pipe(plugins.ghPages())
+})
+
 gulp.task('pages', function() {
-  return gulp.src("src/pages/**/*.html")
+  return gulp.src('src/pages/**/*.html')
             .pipe(plugins.data({site: site}))
             .pipe(plugins.nunjucksRender({ path: ['src/templates']}))
             .pipe(plugins.htmlmin({collapseWhitespace: true}))
@@ -66,23 +71,29 @@ gulp.task('pages', function() {
             .pipe(reload({stream: true}))
 })
 
+gulp.task('static', function() {
+  return gulp.src('src/static/**/*')
+             .pipe(gulp.dest('dist'))
+})
+
+
 gulp.task('sass', function()  {
-  return gulp.src("src/css/**/*.scss")
+  return gulp.src('src/css/**/*.scss')
             .pipe(plugins.sass({outputStyle: 'compact'}).on('error', plugins.sass.logError))
             .pipe(plugins.concat('css/all.min.css', {newLine: ''}))
             .pipe(gulp.dest('dist'))
             .pipe(reload({stream: true}))
 })
 
-gulp.task("images", function() {
-  return gulp.src("src/img/**/*")
+gulp.task('images', function() {
+  return gulp.src('src/img/**/*')
               .pipe(plugins.imagemin())
-              .pipe(gulp.dest("dist/img"))
+              .pipe(gulp.dest('dist/img'))
 })
 
-gulp.task("js", function() {
-  return gulp.src("src/js/**/*.js")
-              .pipe(gulp.dest("dist/js"))
+gulp.task('js', function() {
+  return gulp.src('src/js/**/*.js')
+              .pipe(gulp.dest('dist/js'))
 })
 
 gulp.task('deploy', function() {
@@ -101,14 +112,14 @@ gulp.task('watch', function(cb) {
 
 gulp.task('assets', ['images', 'sass', 'js'])
 
-gulp.task("clean", function() {
+gulp.task('clean', function() {
   del(['dist'])
 })
 
-gulp.task("sync", function() {
+gulp.task('sync', function() {
   return bSync({server: {baseDir: 'dist'}})
 })
 
-gulp.task("default", plugins.sequence('clean', 'assets', 'blog', 'pages', 'watch', 'sync') )
+gulp.task('default', plugins.sequence('clean', 'assets', 'static', 'blog', 'pages', 'watch', 'sync') )
 
 
