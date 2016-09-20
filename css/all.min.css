@@ -1,7 +1,50 @@
 body { background-color: #EBEBEB; }
 
-body h1 { color: #F9A25A; }
+body h1 { color: black; }
 
 body h2, body h3 { color: #009A9A; }
+
+body h2 a, body h3 a { text-decoration: none; color: #009a9a; }
 body { font-size: 18px; }
-.navbar-brand { padding: 0px; margin: 0px; border: 0px; }
+.affix-top, .affix { position: static; }
+
+html, body { text-rendering: optimizeLegibility; text-rendering: geometricPrecision; font-smooth: always; font-smoothing: antialiased; -moz-font-smoothing: antialiased; -webkit-font-smoothing: antialiased; -webkit-font-smoothing: subpixel-antialiased; }
+
+body { font-family: 'Open Sans', sans-serif; }
+
+nav.home-nav { float: right; list-style: none; }
+
+.navbar { border-radius: 0; position: absolute; min-height: 20px; width: 100%; margin-bottom: 0px; /* border: 1px solid transparent; */ background: rgba(0, 0, 0, 0.3); }
+
+nav.home-nav li { display: inline-block; margin-left: 30px; }
+
+nav.navbar li a { color: rgba(255, 255, 255, 0.9); text-decoration: none; }
+
+@media (min-width: 979px) { #sidebar.affix-top { position: static; margin-top: 30px; width: 228px; }
+  #sidebar.affix { position: fixed; top: 70px; width: 228px; } }
+
+html, body { height: 100%; }
+
+@media (min-width: 680px) { .jumbotron-main { padding-top: 10px; background-image: url(/img/coffee-apple-iphone-laptop.jpg); background-position: 100% 100%; background-size: cover; background-repeat: no-repeat; width: 100%; height: 100vh; } }
+
+.top-margin { margin-top: 2em; }
+
+a.navbar-brand { padding-bottom: 5px; background: transparent; color: rgba(255, 255, 255, 0.8); }
+
+a.navbar-brand:hover { color: black; }
+
+.nav > li > a, .nav > li > a, a.navbar-brand { padding-bottom: 5px; text-decoration: none; }
+
+.nav > li > a:focus, .nav > li > a:hover, a.navbar-brand:focus, a.navbar-brand:hover { color: #9ca8b8; background: transparent; }
+
+.hero-header, .hero-msg { color: #fff; margin-top: 2em; }
+
+.sidebar-module { text-align: center; border: 2px solid blue; }
+
+.footer li { display: inline-block; margin: 0px; padding: 20px 20px; width: 100%; border: #F9A25A 3px 0 0 0; text-align: center; }
+
+#sidebar li.active { border: 0 #eee solid; border-right-width: 4px; }
+
+#mainCol { float: right; }
+
+#mainCol h2 { padding-top: 55px; margin-top: -55px; }
